@@ -8,6 +8,7 @@ import CharacterPreview from "./CharacterPreview/CharacterPreview";
 import Paginator from "../../components/paginator/Paginator";
 import { useHistory } from "react-router";
 import { toast } from "react-toastify";
+import EmptyState from "./EmptyState/EmptyState";
 
 const Home: FC = () => {
   const [marvelCharacters, setMarvelCharacters] = useState<
@@ -44,8 +45,16 @@ const Home: FC = () => {
         search: `?searchKey=${searchKey}&page=${page}`,
       });
       getCharacters();
+    } else {
+      resetSearch();
     }
   }, [searchKey, page, history]);
+
+  const resetSearch = () => {
+    setOffset(0);
+    setTotal(0);
+    setMarvelCharacters([]);
+  };
 
   return (
     <Page loading={loading}>
@@ -58,8 +67,9 @@ const Home: FC = () => {
           className="mb-3"
         />
       ))}
-
       {total ? <Paginator offset={offset} total={total} /> : null}
+
+      <EmptyState loading={loading} hits={!!marvelCharacters?.length} />
     </Page>
   );
 };

@@ -5,14 +5,7 @@
     flex-wrap: wrap;
   }
 }
-.LatestComics {
-  width: 250px;
 
-  @include media-breakpoint-down(md) {
-    width: 100%;
-    margin-top: 1rem;
-  }
-}
 
 .ComicStoriesWrapper {
   margin-right: 1rem;

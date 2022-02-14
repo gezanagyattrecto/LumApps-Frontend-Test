@@ -2,8 +2,9 @@ import React, { FC, useEffect, useState } from "react";
 import classNames from "classnames";
 
 import { characterService } from "../../../service/character.service";
-import { ComicsDetailModel } from "../../../models/comics-detail.model";
+import { ComicsDetailModel } from "models";
 import LatestComicsItem from "../LatestComicsItem/LatestComicsItem";
+import classes from "./LatestComics.module.scss";
 
 interface LatestComicsProps {
   className: string;
@@ -22,7 +23,7 @@ const LatestComics: FC<LatestComicsProps> = ({ className, characterId }) => {
   }, [characterId]);
 
   return (
-    <div className={classNames(className, "card p-3")}>
+    <div className={classNames("card p-3", classes.LatestComics)}>
       <h5 className="mb-3">Latest comics</h5>
       <div>
         {comics?.map((item) => (
