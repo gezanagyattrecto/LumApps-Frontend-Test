@@ -3,6 +3,7 @@ import classes from "./Header.module.scss";
 import classNames from "classnames";
 import MarvelLogo from "assets/image/Marvel_Logo.svg.png";
 import SearchField from "../search-field/SearchField";
+import { Link } from "react-router-dom";
 
 const Header: FC = () => {
   return (
@@ -12,7 +13,9 @@ const Header: FC = () => {
         "d-flex align-items-center justify-content-between p-5"
       )}
     >
-      <img className={classes.Logo} src={MarvelLogo} alt={"Marvel Logo"} />
+      <Link to="/home">
+        <img className={classes.Logo} src={MarvelLogo} alt={"Marvel Logo"} />
+      </Link>
       <SearchField />
     </header>
   );

@@ -9,6 +9,8 @@ import App from "./App";
 import "./index.scss";
 import "bootstrap/dist/css/bootstrap.css";
 import "react-toastify/dist/ReactToastify.css";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+
 import { Router } from "react-router";
 import { createBrowserHistory } from "history";
 const history = createBrowserHistory();

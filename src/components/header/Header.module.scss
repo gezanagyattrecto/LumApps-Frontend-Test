@@ -1,4 +1,4 @@
-@import '~styles/variables.scss';
+@import "~styles/variables.scss";
 
 .Header {
   background: $primary-color;
@@ -8,5 +8,8 @@
 
   .Logo {
     height: 50px;
+    &:hover {
+      cursor: pointer;
+    }
   }
 }

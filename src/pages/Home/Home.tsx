@@ -7,6 +7,7 @@ import { MarvelCharacterModel } from "../../models";
 import CharacterPreview from "./CharacterPreview/CharacterPreview";
 import Paginator from "../../components/paginator/Paginator";
 import { useHistory } from "react-router";
+import { toast } from "react-toastify";
 
 const Home: FC = () => {
   const [marvelCharacters, setMarvelCharacters] = useState<
@@ -14,16 +15,27 @@ const Home: FC = () => {
   >([]);
   const [offset, setOffset] = useState<number>();
   const [total, setTotal] = useState<number>();
+  const [loading, setLoading] = useState<boolean>(false);
   const searchKey = useSelector(selectSearchKey);
   const page = useSelector(selectPage);
   const history = useHistory();
 
   useEffect(() => {
     const getCharacters = async () => {
-      const response = await characterService.search(searchKey, page);
-      setOffset(response.offset);
-      setTotal(response.total);
-      setMarvelCharacters(response.results);
+      try {
+        setLoading(true);
+        const { offset, total, results } = await characterService.search(
+          searchKey,
+          page
+        );
+        setOffset(offset);
+        setTotal(total);
+        setMarvelCharacters(results);
+      } catch (e) {
+        toast.error("Something went wrong");
+      } finally {
+        setLoading(false);
+      }
     };
 
     if (searchKey) {
@@ -36,7 +48,7 @@ const Home: FC = () => {
   }, [searchKey, page, history]);
 
   return (
-    <Page>
+    <Page loading={loading}>
       {marvelCharacters?.map((character) => (
         <CharacterPreview
           character={character}
