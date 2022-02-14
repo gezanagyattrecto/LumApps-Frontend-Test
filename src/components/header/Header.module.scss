@@ -1,0 +1,12 @@
+@import '~styles/variables.scss';
+
+.Header {
+  background: $primary-color;
+  color: white;
+  height: 100px;
+  width: 100%;
+
+  .Logo {
+    height: 50px;
+  }
+}

@@ -1,0 +1,18 @@
+.SearchFieldWrapper {
+  position: relative;
+
+  .SearchField {
+    background: white;
+    border-radius: 20px;
+    border-color: white;
+    padding-right: 30px;
+  }
+
+  .SearchIcon {
+    color: black;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 1.2rem;
+  }
+}
