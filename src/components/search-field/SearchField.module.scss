@@ -14,5 +14,10 @@
     right: 10px;
     top: 10px;
     font-size: 1.2rem;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
   }
 }

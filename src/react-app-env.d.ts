@@ -1,2 +1,2 @@
 /// <reference types="react-scripts" />
-type Role = "ADMIN" | "USER";
+type ApplicationState = import('store').ApplicationState;

@@ -1,5 +1,7 @@
-import React, {FC} from "react";
+import React, { FC, useEffect } from "react";
 import Page from "../../components/page/Page";
+import { useSelector } from "react-redux";
+import { selectSearchKey } from "../../store/common";
 
 const Home: FC = () => {
   // useEffect(() => {
@@ -10,6 +12,12 @@ const Home: FC = () => {
   //
   //   getCharacters();
   // }, []);
+
+  const searchKey = useSelector(selectSearchKey);
+
+  useEffect(() => {
+    console.log("searchKey on home", searchKey);
+  }, [searchKey]);
 
   return <Page>Home Page with search</Page>;
 };
