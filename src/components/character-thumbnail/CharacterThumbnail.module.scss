@@ -1,8 +1,9 @@
 @import "~styles/mixins.scss";
+@import "~styles/variables.scss";
 .Thumbnail {
-  width: 250px;
+  width: $preview-image-min-width;
   height: 175px;
-  min-width: 250px;
+  min-width: $preview-image-min-width;
   object-fit: cover;
 
   @include media-breakpoint-down(md) {
