@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 
 import App from "./App";
 
-import "./index.css";
+import "./index.scss";
 import "bootstrap/dist/css/bootstrap.css";
 import "react-toastify/dist/ReactToastify.css";
 import { Router } from "react-router";

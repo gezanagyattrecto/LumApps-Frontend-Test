@@ -1,25 +1,39 @@
-import React, { FC, useEffect } from "react";
+import React, { FC, useEffect, useState } from "react";
 import Page from "../../components/page/Page";
 import { useSelector } from "react-redux";
 import { selectSearchKey } from "../../store/common";
+import { characterService } from "../../service/character.service";
+import { MarvelCharacterModel } from "../../models";
+import CharacterPreview from "./CharacterPreview/CharacterPreview";
 
 const Home: FC = () => {
-  // useEffect(() => {
-  //   const getCharacters = async () => {
-  //     const response = await heroService.getCharacters();
-  //     console.log("response", response);
-  //   };
-  //
-  //   getCharacters();
-  // }, []);
+  const [marvelCharacters, setMarvelCharacters] = useState<
+    MarvelCharacterModel[]
+  >([]);
 
   const searchKey = useSelector(selectSearchKey);
-
   useEffect(() => {
-    console.log("searchKey on home", searchKey);
+    const getCharacters = async () => {
+      const response = await characterService.search(searchKey);
+      setMarvelCharacters(response.results);
+    };
+
+    if (searchKey) {
+      getCharacters();
+    }
   }, [searchKey]);
 
-  return <Page>Home Page with search</Page>;
+  return (
+    <Page>
+      {marvelCharacters?.map((character) => (
+        <CharacterPreview
+          character={character}
+          key={character.id}
+          className="mb-3"
+        />
+      ))}
+    </Page>
+  );
 };
 
 export default Home;

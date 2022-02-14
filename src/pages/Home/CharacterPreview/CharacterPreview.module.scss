@@ -1,0 +1,19 @@
+.CharacterPreview {
+  .TextContent {
+    position: relative;
+    p {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    .DetailsButton {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+    }
+  }
+}

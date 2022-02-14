@@ -53,12 +53,15 @@ async function request<T = void>({
 }: RequestConfig) {
   const url = generateUrl(resource);
 
+  const defaultParams = {
+    apikey: appConfig.REACT_APP_MARVEL_API_KEY,
+  };
+
+  config.params = { ...config.params, ...defaultParams };
+
   const requestConfig = {
     method,
     url,
-    params: {
-      apikey: appConfig.REACT_APP_MARVEL_API_KEY,
-    },
     ...config,
   };
 

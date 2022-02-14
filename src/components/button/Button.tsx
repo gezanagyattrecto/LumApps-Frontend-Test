@@ -2,19 +2,18 @@ import React, { ButtonHTMLAttributes, FC } from "react";
 import classNames from "classnames";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  color?: "primary" | "secondary" | "danger";
+  variant?: "primary" | "link";
 }
 
 const Button: FC<ButtonProps> = (props) => {
-  const { children, color, className } = props;
+  const { children, variant, className } = props;
 
   return (
     <button
       {...props}
       className={classNames("btn", className, {
-        "btn-primary": color === "primary",
-        "btn-secondary": color === "secondary",
-        "btn-danger": color === "danger",
+        "btn-primary": variant === "primary",
+        "btn-link": variant === "link",
       })}
     >
       {children}
@@ -23,7 +22,7 @@ const Button: FC<ButtonProps> = (props) => {
 };
 
 Button.defaultProps = {
-  color: "primary",
+    variant: "primary",
 };
 
 export default Button;
