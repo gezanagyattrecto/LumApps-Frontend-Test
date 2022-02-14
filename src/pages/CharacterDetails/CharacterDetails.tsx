@@ -15,6 +15,7 @@ import ComicsStories from "./ComicStories/ComicStories";
 import { SafeInnerHtml } from "../../components/safe-inner-html/SafeInnerHtml";
 import { useSelector } from "react-redux";
 import { selectPage, selectSearchKey } from "../../store/common";
+import classNames from "classnames";
 
 const faBackwardIcon = faArrowLeft as IconProp;
 
@@ -52,7 +53,12 @@ const CharacterDetails: FC = () => {
     <Page loading={loading}>
       {data?.id ? (
         <>
-          <div className="d-flex justify-content-between">
+          <div
+            className={classNames(
+              "d-flex justify-content-between",
+              classes.DetailHeader
+            )}
+          >
             <div>
               <Button
                 variant="link"
@@ -68,8 +74,16 @@ const CharacterDetails: FC = () => {
             <CharacterThumbnail thumbnail={data?.thumbnail} />
           </div>
 
-          <div className="d-flex justify-content-between mt-3">
-            <ComicsStories className="flex-grow-1 mr-3" characterId={id} />
+          <div
+            className={classNames(
+              "d-flex justify-content-between mt-3",
+              classes.DetailBody
+            )}
+          >
+            <ComicsStories
+              className={classNames("flex-grow-1", classes.ComicStoriesWrapper)}
+              characterId={id}
+            />
             <LatestComics className={classes.LatestComics} characterId={id} />
           </div>
         </>

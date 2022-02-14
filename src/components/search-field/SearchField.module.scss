@@ -1,5 +1,10 @@
+@import "~styles/mixins.scss";
 .SearchFieldWrapper {
   position: relative;
+
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
 
   .SearchField {
     background: white;

@@ -1,6 +1,12 @@
+@import "~styles/mixins.scss";
 .Thumbnail {
   width: 250px;
   height: 175px;
   min-width: 250px;
   object-fit: cover;
+
+  @include media-breakpoint-down(md) {
+    width: 100%;
+    min-width: 100%;
+  }
 }

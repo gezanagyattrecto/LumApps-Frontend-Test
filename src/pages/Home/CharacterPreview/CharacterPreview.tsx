@@ -23,8 +23,10 @@ const CharacterPreview: FC<CharacterPreviewProps> = ({
   const { name, description, thumbnail, id } = character;
 
   return (
-    <div className={classNames("card", className, classes.CharacterPreview)}>
-      <div className="d-flex">
+    <div
+      className={classNames("card d-flex", className, classes.CharacterPreview)}
+    >
+      <div className={classNames("d-flex", classes.CharacterPreviewWrapper)}>
         <CharacterThumbnail thumbnail={thumbnail} />
         <div className={classNames("p-3", classes.TextContent)}>
           <h3>{name}</h3>
