@@ -1,14 +1,17 @@
 import request, { Methods } from "../util/request";
 import { ListResponseModel, MarvelCharacterModel } from "../models";
 import { ComicsDetailModel } from "../models/comics-detail.model";
+import config from "config/index";
 
 class CharacterService {
-  async search(keyword: string) {
+  async search(keyword: string, page: number = 0) {
     return request<ListResponseModel<MarvelCharacterModel>>({
       method: Methods.GET,
       resource: "characters",
       params: {
         nameStartsWith: keyword,
+        limit: config.ITEMS_PER_PAGE,
+        offset: config.ITEMS_PER_PAGE * page,
       },
     });
   }

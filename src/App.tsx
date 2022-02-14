@@ -4,7 +4,6 @@ import Home from "./pages/Home/Home";
 import Header from "./components/header/Header";
 import CharacterDetails from "./pages/CharacterDetails/CharacterDetails";
 
-
 const App: FC = () => {
   return (
     <div>
