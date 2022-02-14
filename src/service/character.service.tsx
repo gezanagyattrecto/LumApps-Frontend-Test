@@ -1,4 +1,4 @@
-import request, { Methods } from "../util/request";
+import request, { Methods } from "util/request";
 import {
   ListResponseModel,
   MarvelCharacterModel,

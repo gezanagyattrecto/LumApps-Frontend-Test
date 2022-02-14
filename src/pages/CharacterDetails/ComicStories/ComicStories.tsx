@@ -1,8 +1,8 @@
 import React, { FC, useEffect, useState } from "react";
 import classNames from "classnames";
 
-import { characterService } from "../../../service/character.service";
-import { ComicsStoryModel } from "../../../models";
+import { characterService } from "service/character.service";
+import { ComicsStoryModel } from "models";
 
 interface ComicsStoriesProps {
   className: string;

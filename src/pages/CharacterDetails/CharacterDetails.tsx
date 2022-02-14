@@ -1,21 +1,19 @@
 import React, { FC, useEffect, useState } from "react";
-import Page from "../../components/page/Page";
+import { useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router";
-import { characterService } from "../../service/character.service";
-import { MarvelCharacterModel } from "../../models";
-import CharacterThumbnail from "../../components/character-thumbnail/CharacterThumbnail";
-import Button from "../../components/button/Button";
+import classNames from "classnames";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import { toast } from "react-toastify";
+
+import { characterService } from "service/character.service";
+import { selectPage, selectSearchKey } from "store/common";
+import { SafeInnerHtml, CharacterThumbnail, Button, Page } from "components";
+import { MarvelCharacterModel } from "models";
+import ComicsStories from "./ComicStories/ComicStories";
 import LatestComics from "./LatestComics/LatestComics";
 import classes from "./CharacterDetails.module.scss";
-import { toast } from "react-toastify";
-import ComicsStories from "./ComicStories/ComicStories";
-import { SafeInnerHtml } from "../../components/safe-inner-html/SafeInnerHtml";
-import { useSelector } from "react-redux";
-import { selectPage, selectSearchKey } from "../../store/common";
-import classNames from "classnames";
 
 const faBackwardIcon = faArrowLeft as IconProp;
 

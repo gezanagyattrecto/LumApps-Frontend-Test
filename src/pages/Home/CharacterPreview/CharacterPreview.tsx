@@ -1,11 +1,10 @@
 import React, { FC } from "react";
-import { MarvelCharacterModel } from "../../../models";
-import classes from "./CharacterPreview.module.scss";
-import classNames from "classnames";
-import CharacterThumbnail from "../../../components/character-thumbnail/CharacterThumbnail";
 import { Link } from "react-router-dom";
-import Button from "../../../components/button/Button";
-import { SafeInnerHtml } from "../../../components/safe-inner-html/SafeInnerHtml";
+import classNames from "classnames";
+
+import { MarvelCharacterModel } from "models";
+import { CharacterThumbnail, SafeInnerHtml, Button } from "components";
+import classes from "./CharacterPreview.module.scss";
 
 interface CharacterPreviewProps {
   character: MarvelCharacterModel;

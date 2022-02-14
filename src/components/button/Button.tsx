@@ -5,7 +5,8 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "link";
 }
 
-const Button: FC<ButtonProps> = (props) => {
+
+export const Button: FC<ButtonProps> = (props) => {
   const { children, variant, className } = props;
 
   return (

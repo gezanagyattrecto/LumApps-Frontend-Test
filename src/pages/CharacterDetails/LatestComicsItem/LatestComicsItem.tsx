@@ -1,6 +1,6 @@
 import React, { FC, useMemo } from "react";
 import { format } from "date-fns";
-import { ComicsDetailModel } from "../../../models/comics-detail.model";
+import { ComicsDetailModel } from "models";
 
 interface LatestComicsItemProps {
   comics: ComicsDetailModel;

@@ -7,7 +7,7 @@ interface PageProps {
 }
 const Page: FC<PageProps> = ({ children, loading }) => {
   return (
-    <div className="container mt-3">
+    <div className="container my-3">
       {loading ? (
         <div className={classes.LoadingContainer}>
           <Grid color="#01579b" height={80} width={80} />

@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from "react";
 import classNames from "classnames";
 
-import { characterService } from "../../../service/character.service";
+import { characterService } from "service/character.service";
 import { ComicsDetailModel } from "models";
 import LatestComicsItem from "../LatestComicsItem/LatestComicsItem";
 import classes from "./LatestComics.module.scss";

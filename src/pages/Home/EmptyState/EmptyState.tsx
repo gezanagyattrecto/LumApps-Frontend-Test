@@ -1,6 +1,6 @@
 import React, { FC, useMemo } from "react";
 import { useSelector } from "react-redux";
-import { selectSearchKey } from "../../../store/common";
+import { selectSearchKey } from "store/common";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
