@@ -1,3 +1,6 @@
+## Important note:
+The api key (.env: REACT_APP_MARVEL_API_KEY) is created by me, the app does not use the provided one by LumApp (since I have CORS issue with the developer account created by LumApps, I've created a new one where localhost is whitelisted.)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
