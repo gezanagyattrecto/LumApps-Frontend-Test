@@ -22,7 +22,7 @@ const LatestComics: FC<LatestComicsProps> = ({ className, characterId }) => {
   }, [characterId]);
 
   return (
-    <div className={classNames(className, "card p-2")}>
+    <div className={classNames(className, "card p-3")}>
       <h5 className="mb-3">Latest comics</h5>
       <div>
         {comics?.map((item) => (

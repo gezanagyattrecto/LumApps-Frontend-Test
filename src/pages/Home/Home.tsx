@@ -51,6 +51,8 @@ const Home: FC = () => {
     <Page loading={loading}>
       {marvelCharacters?.map((character) => (
         <CharacterPreview
+          searchKey={searchKey}
+          page={page}
           character={character}
           key={character.id}
           className="mb-3"

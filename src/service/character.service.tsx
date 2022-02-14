@@ -1,6 +1,11 @@
 import request, { Methods } from "../util/request";
-import { ListResponseModel, MarvelCharacterModel } from "../models";
-import { ComicsDetailModel } from "../models/comics-detail.model";
+import {
+  ListResponseModel,
+  MarvelCharacterModel,
+  ComicsStoryModel,
+  ComicsDetailModel,
+} from "models";
+
 import config from "config/index";
 
 class CharacterService {
@@ -31,6 +36,17 @@ class CharacterService {
       resource: `characters/${characterId}/comics`,
       params: {
         orderBy: "-onsaleDate",
+        limit: 4,
+      },
+    });
+  }
+
+  async getStories(characterId: string) {
+    return await request<ListResponseModel<ComicsStoryModel>>({
+      method: Methods.GET,
+      resource: `characters/${characterId}/stories`,
+      params: {
+        orderBy: "-modified",
         limit: 4,
       },
     });
